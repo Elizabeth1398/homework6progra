@@ -1,0 +1,56 @@
+	  <!DOCTYPE html>
+	<html lang="en">
+	<head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body><div style="font-size:22px">
+	<center>
+	<h1 > Editorial Information</h1>
+	<div style="display: table-caption">
+     {{#publisher}}
+     <form>
+     <div class="row">
+      <div class="six columns">
+       <label for="nameInput">Name</label>
+       <input class="u-full-width" type="text" 
+         {{#show}} readonly {{/show}}
+         id="name"  name="name" value="{{name}}">
+      </div>
+      <div class="six columns">
+       <label for="degreeInput">Country</label>
+       <input class="u-full-width" type="text"
+          {{#show}} readonly {{/show}}
+          id="country" name="country" value="{{country}}">
+      </div>
+     </div>
+     <div class="row">
+      <div class="six columns">
+       <label for="emailInput">Founded</label>
+       <input class="u-full-width" type="email"
+          {{#show}} readonly {{/show}}
+          id="founded" name="founded" value="{{founded}}">
+      </div>
+      <div class="six columns">
+       <label for="phoneInput">Genre</label>
+       <input class="u-full-width" type="tel"
+         {{#show}} readonly {{/show}}
+         id="genere" name="genere" value="{{genere}}">
+      </div>
+      <a class="button button-primary" href="/publisher"
+	    data-navigo>Back</a>
+     {{#edit}}
+	   <a class="button button-primary" style="float: right" 
+	     data-navigo href="/publisher/update/{{id}}">Update Editorial</a>
+	 {{/edit}}
+     {{#create}}
+	  <input type="hidden" name="_method" value="PUT">
+	   <a class="button button-primary" style="float: right" 
+	     data-navigo href="/publisher/store">Create Editorial</a>
+	 {{/create}}
+     {{/publisher}}
+    </form>
+   </div>
+  </div>

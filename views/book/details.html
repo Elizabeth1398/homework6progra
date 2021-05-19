@@ -1,0 +1,56 @@
+  <!DOCTYPE html>
+	<html lang="en">
+	<head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+</head>
+<body>
+    <title>{{title}}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1"><div style="font-size:22px">
+	<center>
+	<h1 > Book Information</h1>
+	<div style="display: table-caption">
+
+     {{#Books}}
+     <form>
+   <div class="mb-3">
+       <label for="nameInput">Title</label>
+       <input class="u-full-width" type="text" 
+         {{#show}} readonly {{/show}}
+         id="title"  name="title" value="{{title}}">
+      </div>
+  <div class="mb-3">
+       <label for="degreeInput">Edition</label>
+       <input class="u-full-width" type="text"
+          {{#show}} readonly {{/show}}
+          id="edition" name="edition" value="{{edition}}">
+      </div>
+  <div class="mb-3">
+       <label for="emailInput">Copyright</label>
+       <input class="u-full-width" type="text"
+          {{#show}} readonly {{/show}}
+          id="copyright" name="copyright" value="{{copyright}}">
+      </div>
+     <div class="mb-3">
+       <label for="phoneInput">Pages</label>
+       <input type="tel"
+         {{#show}} readonly {{/show}}
+         id="pages" name="pages" value="{{pages}}">
+      </div>
+      <a href="/Book"data-navigo>Back</a>
+     {{#edit}}
+	   <a style="float: right" data-navigo href="/Book/update/{{id}}">Update Book</a>
+	     {{/edit}}
+     {{#create}}
+	  <input type="hidden" name="_method" value="PUT">
+	   <a style="float: right" data-navigo href="/Book/store">Create Book</a>
+	 {{/create}}
+     {{/Books}}
+    </form>
+   </div>
+  </div>

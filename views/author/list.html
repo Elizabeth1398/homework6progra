@@ -1,0 +1,58 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+#t01 {
+  width: 100%;    
+  background-color: #f1f1c1;
+}
+</style>
+</head>
+<body>
+<center>
+	<center>
+	<div class="container">
+	<div class="row" style="margin-top: 5%;">
+
+    <a href="/Book">Books</a>
+    <a href="/publisher">Editorials</a>
+
+
+      <h1>Authors List</h1>
+     <table><thead>
+      <tr>
+        <th>Name</th>
+        <th>Nationality</th>
+        <th>Birth</th>
+        <th>Fields</th>
+		<th>Actions</th></th></tr>
+      </thead><tbody>
+      {{#author}}
+      <td>{{name}}</td>
+      <td>{{nationality}}</td>
+      <td>{{birth}}</td>
+      <td>{{fields}}</td>
+      <td>
+      <a class="button" href="/author/show/{{id}}" data-navigo>Show</a>
+      <a class="button" href="/author/edit/{{id}}" data-navigo>Edit</a>
+      <a class="button" href="/author/delete/{{id}}" data-navigo>Erase</a>
+      </td>
+      </tr>
+      {{/author}}</tbody>
+     </table>
+     <a class="button button-primary" href="/author/create" data-navigo>Add Author</a>
+   </div>
+  </div>
+  </body>

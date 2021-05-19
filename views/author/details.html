@@ -1,0 +1,57 @@
+	  <!DOCTYPE html>
+	<html lang="en">
+	<head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+</head>
+<body><div style="font-size:22px">
+	<center>
+	<h1 > Author Information</h1>
+	<div style="display: table-caption">
+
+     {{#author}}
+     <form>
+       <div class="mb-3">
+       <label for="nameInput">Name</label>
+       <input class="u-full-width" type="text" 
+         {{#show}} readonly {{/show}}
+         id="name"  name="name" value="{{name}}">
+      </div>
+        <div class="mb-3">
+       <label for="degreeInput">Nationality</label>
+       <input class="u-full-width" type="text"
+          {{#show}} readonly {{/show}}
+          id="nationality" name="nationality" value="{{nationality}}">
+      </div>
+     <div class="mb-3">
+      <div class="six columns">
+       <label for="emailInput">Birth</label>
+       <input class="u-full-width" type="text"
+          {{#show}} readonly {{/show}}
+          id="birth" name="birth" value="{{birth}}">
+      </div>
+        <div class="mb-3">
+       <label for="phoneInput">Fields</label>
+       <input class="u-full-width" type="text"
+         {{#show}} readonly {{/show}}
+         id="fields" name="fields" value="{{fields}}">
+      </div>
+      <a class="button button-primary" href="/author"
+	    data-navigo>Back</a>
+     {{#edit}}
+	   <a style="float: right" 
+	     data-navigo href="/author/update/{{id}}">Update</a>
+	 {{/edit}}
+     {{#create}}
+	  <input type="hidden" name="_method" value="PUT">
+	   <a  style="float: right"  data-navigo href="/author/store">Create</a>
+	 {{/create}}
+     {{/author}}
+    </form>
+   </div>
+  </div>
+ </div>

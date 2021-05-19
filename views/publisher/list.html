@@ -1,0 +1,56 @@
+    <!DOCTYPE html>
+	<html lang="en">
+	<head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 15px;
+  text-align: left;
+}
+#t01 {
+  width: 100%;    
+  background-color: #f1f1c1;
+}
+</style>
+</head>
+<body>
+<center>
+	<div class="container">
+	<div class="row" style="margin-top: 5%;">
+    <a href="/author">Authors</a>
+    <a href="/Book">Books</a>
+
+
+     <h2>Editorials Lists</h2>
+     <table><thead>
+      <tr>
+        <th>Name</th>
+        <th>Country</th>
+        <th>Founded</th>
+        <th>Genre</th>
+		<th>Actions</th></th></tr>
+      </thead><tbody>
+      {{#publisher}}
+      <td>{{name}}</td>
+      <td>{{country}}</td>
+      <td>{{founded}}</td>
+      <td>{{genere}}</td>
+      <td>
+      <a class="button" href="/publisher/show/{{id}}" data-navigo>Show</a>
+      <a class="button" href="/publisher/edit/{{id}}" data-navigo>Edit</a>
+      <a class="button" href="/publisher/delete/{{id}}" data-navigo>Erase</a>
+      </td>
+      </tr>
+      {{/publisher}}</tbody>
+     </table>
+     <a class="button button-primary" href="/publisher/create" data-navigo>Add Editorial</a>
+   </div>
+  </div>
+  </body>
